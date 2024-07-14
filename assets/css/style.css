@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+    width: 100%;
+    margin: auto;
+    font-family: "Roboto", sans-serif;
+}
+
+
+.container {
+    background-color: darkgrey;
+    border: 1px solid black;
+    padding: 20px;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.conversor_box{
+    margin: 0 auto;
+    width: 400px;
+    font-size:medium;
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+
+input, select{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid;
+    border-radius: 8px;
+    text-align: center;
+    background: none;
+}
+
+button{
+    color: #198754;
+    line-height: 2;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid;
+    width: 100px;
+    background: none;
+    cursor: pointer;
+}

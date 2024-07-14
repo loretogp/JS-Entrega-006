@@ -1,0 +1,37 @@
+</p><!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Conversor de Peso CLP a otras monedas</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/style.css'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1><strong>Conversor de monedas Nacional</strong></h1>
+        <div class="conversor_box">
+                <h2>Pesos [CLP]</h2>
+                <input type="number" placeholder="Ingrese el monto" id="clp_value">
+                <h3>Moneda a convertir</h3>
+                <select name="exchange_unit" id="exchange_unit">
+                    <option value="Seleccionar" disabled selected> Seleccione moneda </option>
+                    <option value="dolar">Dolar US$</option>
+                    <option value="euro">Euro €</option>
+                    <option value="uf">UF</option>
+                </select>
+                <div>
+                    <p><button onclick="calc_convert()"><strong>Buscar</strong></button>
+                </div>
+                <label id="calc_value"></label>
+            <h2 id=""></h2>
+        </div>
+        <div class="graph_box">
+            <div id="graph_text"></div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
