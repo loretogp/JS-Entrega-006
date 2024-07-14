@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: white;
     width: 100%;
     margin: auto;
     font-family: "Roboto", sans-serif;
@@ -7,7 +7,7 @@ body {
 
 
 .container {
-    background-color: darkgrey;
+    background-color: white;
     border: 1px solid black;
     padding: 20px;
     width: 600px;
@@ -30,15 +30,17 @@ input, select{
     border-radius: 8px;
     text-align: center;
     background: none;
+    width: 150px;
 }
 
 button{
-    color: #198754;
+    color: black;
+    background-color: rgba(91, 230, 233, 0.582);
     line-height: 2;
     font-size: 1rem;
     border-radius: 4px;
     border: 1px solid;
-    width: 100px;
-    background: none;
+    width: 150px;
+    
     cursor: pointer;
 }
