@@ -25,11 +25,17 @@ async function findValues(){
         } else{
             calc_total = 0;
         }
-
+        var selectElement = document.querySelector("#exchange_unit");
+        var selectedText = selectElement.options[selectElement.selectedIndex].text;
+        if (selectedText == "Seleccione moneda"){
+            calc_value.innerHTML = "Selecciones una moneda de cambio";
+        }
+        else{
+            calc_value.innerHTML = "Valor en " + selectedText + " " + calc_total.toFixed(2);
+        };
     } catch (error){
         document.querySelector("#error").innerHTML = "Lo sentimos. Tenemos un Error"
     }
-    calc_value.innerHTML = calc_total.toFixed(2);
 }
 
 /* Second Step */
@@ -79,7 +85,5 @@ async function renderGrafica() {
     const graph_text = document.querySelector("#graph_text");
     var selectElement = document.querySelector("#exchange_unit");
     var selectedText = selectElement.options[selectElement.selectedIndex].text;
-    graph_text.innerHTML = "<h3>Valores Historicos " + selectedText + "</h3>";
+    graph_text.innerHTML = "<h3>Valores Historicos " + selectedText + "</h3> ";
 }
-
-
