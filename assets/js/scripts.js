@@ -45,8 +45,12 @@ async function getAndCreateDataToChart() {
     
     const res = await fetch(api_url);
     const exchange_rates = await res.json();
-    let info = []
-    for(let i = 0; i < 10; i++){
+    let info = [];
+    let ciclo = 0;
+    if (exchange_unit == "uf"){
+        ciclo = daysDifferForUF();
+    }
+    for(let i = ciclo; i < ciclo + 10; i++){
         info.unshift(exchange_rates.serie[i]);
     }
 
@@ -86,4 +90,18 @@ async function renderGrafica() {
     var selectElement = document.querySelector("#exchange_unit");
     var selectedText = selectElement.options[selectElement.selectedIndex].text;
     graph_text.innerHTML = "<h3>Valores Historicos " + selectedText + "</h3> ";
-}
+};
+
+function daysDifferForUF(){
+    const today = new Date();
+    const nextMonth = today.getMonth() + 1;
+    const year = today.getFullYear();
+    const day9NextMonth = new Date(year, nextMonth, 9);
+    if (nextMonth > 11) {
+        day9NextMonth.setMonth(0); // Enero es el mes 0
+        day9NextMonth.setFullYear(year + 1); // Incrementa el año
+    }
+    const diffInMs = day9NextMonth - today;
+    const diffInDays = Math.ceil(diffInMs / (1000 * 60 * 60 * 24)) - 1;
+    return diffInDays;
+};
